@@ -7,12 +7,24 @@ public class PawnController : MonoBehaviour
     [SerializeField] private int _count = 0;
     [SerializeField] private GameObject _prefab;
 
+    private List<Pawn> _pawns = new List<Pawn>();
+    
     void Start()
     {
         Transform t = transform;
         for (int i = 0; i < _count; ++i)
         {
-            Object.Instantiate(_prefab, t.position, t.rotation, t);
+            var go = Object.Instantiate(_prefab, t.position, t.rotation, t);
+            var pawn = go.GetComponent<Pawn>();
+            _pawns.Add(pawn);
+        }
+    }
+
+    void Update()
+    {
+        foreach (var pawn in _pawns)
+        {
+            pawn.Move();
         }
     }
 }

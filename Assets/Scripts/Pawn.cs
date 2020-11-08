@@ -14,7 +14,7 @@ public class Pawn : MonoBehaviour
         _center = Random.insideUnitSphere;
     }
     
-    void Update()
+    public void Move()
     {
         Vector3 toCenter = _center - transform.position;
         toCenter *= Mathf.Exp(toCenter.magnitude) / 100.0f;
