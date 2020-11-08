@@ -21,13 +21,14 @@ public class Pawn : MonoBehaviour
     public void Move()
     {
         Vector3 toCenter = _center - _position;
-        toCenter *= Mathf.Exp(toCenter.magnitude) / 100.0f;
+        float sqrMag = toCenter.sqrMagnitude;
+        toCenter *= sqrMag * sqrMag * 0.00125f;
         
         Vector3 randomDir = Random.onUnitSphere + _dir * 20.0f + toCenter;
         randomDir.Normalize();
         _dir = randomDir;
 
-        _position += randomDir * _speed * Time.deltaTime;
+        _position += randomDir * (_speed * Time.deltaTime);
         _transform.position = _position;
     }
 }
