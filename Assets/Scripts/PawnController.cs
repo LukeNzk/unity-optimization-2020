@@ -15,8 +15,9 @@ public class PawnController : MonoBehaviour
         for (int i = 0; i < _count; ++i)
         {
             var go = Object.Instantiate(_prefab, t.position, t.rotation, t);
-            var pawn = go.GetComponent<Pawn>();
+            var pawn = new Pawn();
             _pawns.Add(pawn);
+            pawn.Start(go);
         }
     }
 
