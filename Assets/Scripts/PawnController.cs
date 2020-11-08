@@ -8,7 +8,7 @@ public class PawnController : MonoBehaviour
     [SerializeField] private GameObject _prefab;
 
     private List<Pawn> _pawns = new List<Pawn>();
-    
+
     void Start()
     {
         Transform t = transform;
@@ -16,6 +16,7 @@ public class PawnController : MonoBehaviour
         {
             var go = Object.Instantiate(_prefab, t.position, t.rotation, t);
             var pawn = go.GetComponent<Pawn>();
+            ;
             _pawns.Add(pawn);
         }
     }
