@@ -24,7 +24,7 @@ public class Pawn : MonoBehaviour
         float sqrMag = toCenter.sqrMagnitude;
         toCenter *= sqrMag * sqrMag * 0.00125f;
         
-        Vector3 randomDir = Random.onUnitSphere + _dir * 20.0f + toCenter;
+        Vector3 randomDir = RandomOnUnitSphere.Next() + _dir * 20.0f + toCenter;
         randomDir.Normalize();
         _dir = randomDir;
 

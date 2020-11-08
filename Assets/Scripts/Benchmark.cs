@@ -16,6 +16,7 @@ public class Benchmark : MonoBehaviour
     {
         t = GetComponent<Text>();
         File.CreateText(_fileName).Dispose();
+        RandomOnUnitSphere.Generate(1000);
     }
 
     void Update()
