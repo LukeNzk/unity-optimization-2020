@@ -16,16 +16,17 @@ public class PawnController : MonoBehaviour
         {
             var go = Object.Instantiate(_prefab, t.position, t.rotation, t);
             var pawn = go.GetComponent<Pawn>();
-            ;
             _pawns.Add(pawn);
         }
     }
 
     void Update()
     {
-        foreach (var pawn in _pawns)
+        float dt = Time.deltaTime;
+        var count = _pawns.Count;
+        for (int i = 0; i < _pawns.Count; ++i)
         {
-            pawn.Move();
+            _pawns[i].Move(dt);
         }
     }
 }

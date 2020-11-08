@@ -18,7 +18,7 @@ public class Pawn : MonoBehaviour
         _position = _transform.position;
     }
     
-    public void Move()
+    public void Move(float dt)
     {
         Vector3 toCenter = _center - _position;
         float sqrMag = toCenter.sqrMagnitude;
@@ -28,7 +28,7 @@ public class Pawn : MonoBehaviour
         randomDir.Normalize();
         _dir = randomDir;
 
-        _position += randomDir * (_speed * Time.deltaTime);
+        _position += randomDir * (_speed * dt);
         _transform.position = _position;
     }
 }
