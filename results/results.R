@@ -9,3 +9,4 @@ get_mean <- function(filename) {
 stage1 <- get_mean("stage1.csv")
 stage2 <- get_mean("stage2.csv")
 stage3 <- get_mean("stage3.csv")
+stage4 <- get_mean("stage4.csv")
